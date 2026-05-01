@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>UDLAP Parking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div id="loading-screen">
+    <div class="loader-logo">U</div>
+    <div class="loader-ring"></div>
+  </div>
+
+  <div class="phone">
+    <div class="container">
+
+      <div class="auth-header">
+        <div class="logo-mark">U</div>
+        <h1 class="app-title">UDLAP Parking</h1>
+        <p class="app-tagline">Reserva · Campus · Tiempo Real</p>
+        <span class="badge">Universidad de las Américas Puebla</span>
+      </div>
+
+      <div class="tabs">
+        <button id="loginTab" class="active">Iniciar sesión</button>
+        <button id="registerTab">Registrarme</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div id="loginForm" class="form">
+        <div>
+          <p class="field-label">Correo institucional</p>
+          <input type="email" id="loginEmail" placeholder="usuario@udlap.mx">
+        </div>
+        <div>
+          <p class="field-label">Contraseña</p>
+          <div class="input-group">
+            <input type="password" id="loginPassword" placeholder="••••••••">
+            <button class="eye-btn" onclick="togglePassword('loginPassword', this)">👁</button>
+          </div>
+        </div>
+        <button class="main-btn" id="loginBtn" onclick="login()">Entrar</button>
+        <p id="login-error" style="color: var(--red-occupied); font-size: 13px; text-align:center; display:none;"></p>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div id="registerForm" class="form hidden">
+        <div>
+          <p class="field-label">Tipo de usuario</p>
+          <div class="user-type">
+            <button type="button" class="type-btn active" data-type="estudiante">🎓 Estudiante</button>
+            <button type="button" class="type-btn" data-type="profesor">👨‍🏫 Profesor</button>
+            <button type="button" class="type-btn" data-type="empleado">💼 Empleado</button>
+          </div>
+        </div>
+        <div>
+          <p class="field-label">Nombre completo</p>
+          <input type="text" id="regNombre" placeholder="Nombre completo">
+        </div>
+        <div>
+          <p class="field-label">ID Institucional</p>
+          <input type="text" id="idField" placeholder="ID de Estudiante">
+        </div>
+        <div>
+          <p class="field-label">Correo institucional</p>
+          <input type="email" id="regEmail" placeholder="usuario@udlap.mx">
+        </div>
+        <div>
+          <p class="field-label">Contraseña</p>
+          <div class="input-group">
+            <input type="password" id="regPass" placeholder="Mínimo 6 caracteres">
+            <button class="eye-btn" onclick="togglePassword('regPass', this)">👁</button>
+          </div>
+        </div>
+        <div>
+          <p class="field-label">Confirmar contraseña</p>
+          <div class="input-group">
+            <input type="password" id="regConfirmPass" placeholder="Repetir contraseña">
+            <button class="eye-btn" onclick="togglePassword('regConfirmPass', this)">👁</button>
+          </div>
+        </div>
+        <div>
+          <p class="field-label">Tipo de vehículo</p>
+          <select id="tipoVehiculo" onchange="toggleCamposVehiculo()">
+            <option value="coche">🚗 Coche</option>
+            <option value="moto">🏍️ Motocicleta</option>
+            <option value="bicicleta">🚲 Bicicleta</option>
+          </select>
+        </div>
+        <div id="camposExtrasVehiculo">
+          <div>
+            <p class="field-label">Color del vehículo</p>
+            <input type="text" id="vehColor" placeholder="Ej: Rojo">
+          </div>
+          <div>
+            <p class="field-label">Número de placas</p>
+            <input type="text" id="vehPlacas" placeholder="Ej: ABC-1234">
+          </div>
+        </div>
+        <div class="discapacidad">
+          <input type="checkbox" id="regDiscapacidad">
+          <label for="regDiscapacidad">♿ Tengo discapacidad (acceso a cajones especiales)</label>
+        </div>
+        <button class="main-btn" id="registerBtn" onclick="register()">Crear cuenta</button>
+        <p id="register-error" style="color: var(--red-occupied); font-size: 13px; text-align:center; display:none;">
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración – UDLAP Parking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div id="loading-screen">
+    <div class="loader-logo">U</div>
+    <div class="loader-ring"></div>
+  </div>
+
+  <div class="phone">
+    <div class="container">
+
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;margin-top:10px;">
+        <button onclick="window.location.href='home.html'"
+          style="background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-primary);">←</button>
+        <h1 style="font-size:22px;font-weight:800;margin:0;">Configuración</h1>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <div class="avatar" id="avatar-letter">U</div>
+        <div class="profile-info">
+          <strong id="profile-name">Cargando...</strong>
+          <span id="profile-id">ID: —</span>
+        </div>
+      </div>
+
+      <!-- APARIENCIA -->
+      <p class="settings-section-title">Apariencia</p>
+
+      <div class="setting-row">
+        <div class="setting-row-left">
+          <span class="setting-icon">🌓</span>
+          <label>Modo oscuro</label>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="darkToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-row-left">
+          <span class="setting-icon">🔤</span>
+          <label>Tamaño de letra</label>
+        </div>
+        <select id="fontSize">
+          <option value="small">Pequeño</option>
+          <option value="medium" selected>Mediano</option>
+          <option value="large">Grande</option>
+        </select>
+      </div>
+
+      <!-- NOTIFICACIONES -->
+      <p class="settings-section-title">Notificaciones</p>
+
+      <div class="setting-row">
+        <div class="setting-row-left">
+          <span class="setting-icon">🔔</span>
+          <label>Notificaciones push</label>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="notifToggle" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <!-- VEHÍCULO -->
+      <p class="settings-section-title">Mi Vehículo</p>
+
+      <div class="setting-row" style="flex-direction:column;align-items:flex-start;gap:8px;">
+        <div class="setting-row-left">
+          <span class="setting-icon">🚗</span>
+          <label>Tipo</label>
+        </div>
+        <select id="vehiculoTipo" style="width:100%;">
+          <option value="coche">🚗 Coche</option>
+          <option value="moto">🏍️ Motocicleta</option>
+          <option value="bicicleta">🚲 Bicicleta</option>
+        </select>
+      </div>
+
+      <div class="setting-row" style="flex-direction:column;align-items:flex-start;gap:8px;" id="placas-row">
+        <div class="setting-row-left">
+          <span class="setting-icon">🪧</span>
+          <label>Placas</label>
+        </div>
+        <input type="text" id="vehPlacas" placeholder="Número de placas" style="width:100%;">
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-row-left">
+          <span class="setting-icon">♿</span>
+          <label>Tengo discapacidad</label>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="discapToggle">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <button class="main-btn" id="save-btn" onclick="guardarCambios()" style="margin-top:20px;">Guardar
+        cambios</button>
+
+      <!-- CUENTA -->
+      <p class="settings-section-title" style="margin-top:24px;">Cuenta</p>
+      <button class="danger-btn" onclick="logout()">Cerrar sesión</button>
+
+    </div>
+  </div>
+
+  <script type="module" src="js/settings.js"></script>
+</body>
+
+</html>
